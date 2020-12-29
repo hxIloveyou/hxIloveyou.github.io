@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="Teemo">
   <meta name="keywords" content="">
-  <title>我的第一篇博客文章 - Hexo</title>
+  <title>Hexo</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -162,7 +162,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="我的第一篇博客文章">
+            <span class="h2" id="subtitle" title="">
               
             </span>
 
@@ -172,7 +172,7 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2020-12-29 18:42" pubdate>
+      <time datetime="2020-12-29 19:56" pubdate>
         2020年12月29日 晚上
       </time>
     </span>
@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      12 字
+      374 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      4
        分钟
     </span>
   
@@ -224,11 +224,40 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">我的第一篇博客文章</h1>
+            <h1 style="display: none"></h1>
             
             <div class="markdown-body">
-              <h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><h3 id="第一节"><a href="#第一节" class="headerlink" title="第一节"></a>第一节</h3><hr>
-<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><h3 id="第一节-1"><a href="#第一节-1" class="headerlink" title="第一节"></a>第一节</h3>
+              <h1 id="音频处理工具——SoX"><a href="#音频处理工具——SoX" class="headerlink" title="音频处理工具——SoX"></a>音频处理工具——SoX</h1><p>SoX是一款非常强大的音频处理程序，是一个跨平台，支持命令行的程序，可以改变音频格式，在大多数平台上支持运行和记录音频文件。</p>
+<h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><ol>
+<li>获取音频文件的元数据</li>
+</ol>
+<blockquote>
+<p><code>soxi</code> 或者<code>sox --i</code> </p>
+</blockquote>
+<p><code>soxi</code> 命令可以通过分析音频文件的文件头，获取其基本信息（通道数，采样率，码率等）</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">Usage: soxi [-V[level]] [-T] [-t|-r|-c|-s|-d|-D|-b|-B|-p|-e|-a] infile1 ...<br></code></pre></td></tr></table></figure>
+<p>用法为<code>sox [-B|-t|...] inputfile</code></p>
+<ol start="2">
+<li>获取音频的统计信息</li>
+</ol>
+<blockquote>
+<p><code>sox &lt;inputfile&gt; -n stat</code></p>
+</blockquote>
+<p>使用<code>sox &lt;inputfile&gt; -n stat</code>命令获取音频文件的统计信息，如振幅，时长，最大音量调节幅度（不失真）等等</p>
+<ol start="3">
+<li>播放与录制音频</li>
+</ol>
+<blockquote>
+<p><code>play</code> 和 <code>rec</code> 提供了基本的播放录制功能  </p>
+</blockquote>
+<p>播放音频：<code>$ play &lt;existing-file&gt;</code></p>
+<p>录制音频：<code>$ rec &lt;new-file&gt;</code></p>
+<p>等同于使用<code>sox -d</code>命令</p>
+<p><code>$ sox &lt;existing-file&gt; -d</code> 表示从<code>&lt;existing-file&gt;</code>中读取其包含的音频数据，在<code>-d</code> 输出到（默认音频设备-扬声器）进行播放</p>
+<p><code>$ sox -d &lt;new-file&gt; </code> 表示从<code>-d</code>（默认音频设备-麦克风）中读取音频，再输出（录制）到<code>&lt;new-file&gt;</code>文件中</p>
+<p><code>sox</code>处理音频的基本流程就是：<code>Input(s) -&gt; Combiner -&gt; Effects -&gt; Output(s)</code></p>
+<p>其中在录制过程中都遵循了<code>sox &lt;input&gt; &lt;output&gt;</code>的方式，可以自定义输入输出设备attach    </p>
+
             </div>
             <hr>
             <div>
@@ -244,18 +273,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2020/12/29/Dockerfile%20%E7%BC%96%E5%86%99%E8%A7%84%E5%88%99/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile"></span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/12/29/hello-world/">
-                        <span class="hidden-mobile">Hello World</span>
+                      <a href="/2020/12/29/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
+                        <span class="hidden-mobile"></span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
